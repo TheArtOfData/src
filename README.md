@@ -1,4 +1,4 @@
-# TheArtOfData
+# [TheArtOfData](https://theartofdata.tech/)
 
 Hello everyone, welcome on our GitHub repo! We'd like to introduce you to our project, TheArtOfData.
 TheArtOfData is an online platform, which has two main features at the moment:
