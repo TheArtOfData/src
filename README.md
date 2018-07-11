@@ -37,7 +37,6 @@ You can also insert images or embed videos to support your explanation.
 * [jquery-easing](http://gsgd.co.uk/sandbox/jquery/easing/)
 * [fontawesome](https://fontawesome.com/)
 
-
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/TheArtOfData/src/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
@@ -49,6 +48,14 @@ Please read [CONTRIBUTING.md](https://github.com/TheArtOfData/src/blob/master/CO
 * **Salvatore Scarfone** - [salvatorescarfone](https://github.com/salvatorescarfone)
 
 ### Contributors
+
+This whole project has been developed with the great help of everyone in [Energy Way](https://www.energyway.it/), especially:
+
+* **Pietro Monari** - [pimo](https://github.com/pimo)
+* **Giovanni Tardini** - [gtardini](https://github.com/gtardini)
+* **Matteo Boschini** - [mbosc](https://github.com/mbosc)
+* **Giovanni Anceschi** - [giovanni-anceschi](https://www.linkedin.com/in/giovanni-anceschi/)
+* **Francesco Manghi** 
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
