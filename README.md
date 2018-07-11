@@ -51,11 +51,18 @@ Please read [CONTRIBUTING.md](https://github.com/TheArtOfData/src/blob/master/CO
 
 This whole project has been developed with the great help of everyone in [Energy Way](https://www.energyway.it/), especially:
 
-* **Pietro Monari** - [pimo](https://github.com/pimo)
-* **Giovanni Tardini** - [gtardini](https://github.com/gtardini)
-* **Matteo Boschini** - [mbosc](https://github.com/mbosc)
-* **Giovanni Anceschi** - [giovanni-anceschi](https://www.linkedin.com/in/giovanni-anceschi/)
-* **Francesco Manghi** 
+# Mentoring
+  * **Giovanni Anceschi** - [giovanni-anceschi](https://www.linkedin.com/in/giovanni-anceschi/)
+  * **Pietro Monari** - [pimo](https://github.com/pimo)
+  * **Francesco Manghi** - [wonka929](https://github.com/wonka929)
+  
+# Developing
+  * **Giovanni Tardini** - [gtardini](https://github.com/gtardini)
+  * **Matteo Boschini** - [mbosc](https://github.com/mbosc)
+
+# Marketing
+  * **Jona Hasaramaj** - [jona-hasaramaj](https://www.linkedin.com/in/jona-hasaramaj/)
+  * **Francesca Zavatta** - [francesca-zavatta](https://www.linkedin.com/in/francesca-zavatta-570910125/)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
