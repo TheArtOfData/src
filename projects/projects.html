@@ -1,0 +1,61 @@
+<!--  TheArtOfData
+   Copyright (C) 2018  by Anceschi Giovanni, Belmonte Luca, Boschini Matteo, Mechetti Luca, Monari Pietro, Scarfone Salvatore, Tardini Giovanni
+
+   Mail : theartofdat@gmail.com
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as published
+   by the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Affero General Public License for more details.
+
+   You should have received a copy of the GNU Affero General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>. -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{
+      margin:0;
+      padding:50px;
+    }
+
+    div.editable{
+      border:1px solid black;
+      height:800px;
+    }
+  </style>
+</head>
+<body>
+
+  <!--<div class="editable"></div>-->
+
+
+
+  <form method="POST" action="result.php">
+    <input type="text" name="title" placeholder="title"/>
+    <input type="text" name="tags" placeholder="tags"/>
+    <input type="text" name="img" placeholder="image"/>
+    <input type="text" name="title" placeholder="title"/>
+    <textarea name="content" style="height:80vh"></textarea>
+    <button type="submit">Publish</button>
+  </form>
+
+
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=0ztlv25sppaw8kkypesjbm6y6v7vhcdlvagkmly77c1mheum"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+  <script src="tiny.js"></script>
+</body>
+</html>

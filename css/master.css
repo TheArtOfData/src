@@ -1,0 +1,137 @@
+/* TheArtOfData
+   Copyright (C) 2018  by Anceschi Giovanni, Belmonte Luca, Boschini Matteo, Mechetti Luca, Monari Pietro, Scarfone Salvatore, Tardini Giovanni
+
+   Mail : theartofdat@gmail.com
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as published
+   by the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Affero General Public License for more details.
+
+   You should have received a copy of the GNU Affero General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>. */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700');
+
+
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+p {
+  word-wrap: break-word;
+
+}
+
+
+#preload {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  z-index: 100000;
+}
+
+#preload img {
+  height: 40px;
+  animation: preload-animation 2s linear infinite reverse;
+}
+
+
+@keyframes preload-animation {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 35px;
+  border-radius: 25px;
+}
+
+.btn-feedback {
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+}
+
+
+.primary-color {
+  color: #009bde !important;
+}
+
+.bg-blue {
+  background: #009bde !important;
+}
+.error-input {
+  background: #e74c3c !important;
+}
+
+.ok-input {
+  background: #2ecc71 !important;
+}
+
+.red-color {
+  color: #e74c3c !important;
+}
+
+.green-color {
+  color: #2ecc71 !important;
+}
+
+.text-center {
+  display: block;
+  text-align: center;;
+}
+
+.clear {
+  clear: both;
+}
+
+.light {
+  font-weight: lighter !important;
+}
+
+.form-group {
+  max-width: 400px;
+}
+
+.modal-800{
+  width:800px;
+}
+
+.has-error{
+-webkit-box-shadow: 0px 0px 10px -1px rgba(255,0,0,1);
+-moz-box-shadow: 0px 0px 10px -1px rgba(255,0,0,1);
+box-shadow: 0px 0px 10px -1px rgba(255,0,0,1);
+}
+
+@media (max-width: 767px) {
+    .affix {
+        position: static;
+    }
+}

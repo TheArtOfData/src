@@ -1,0 +1,140 @@
+<!-- TheArtOfData
+   Copyright (C) 2018  by Anceschi Giovanni, Belmonte Luca, Boschini Matteo, Mechetti Luca, Monari Pietro, Scarfone Salvatore, Tardini Giovanni
+
+   Mail : theartofdat@gmail.com
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as published
+   by the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Affero General Public License for more details.
+
+   You should have received a copy of the GNU Affero General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>. -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
+  <a class="navbar-brand" href="/">
+
+    <span class="parse_app_name"></span>
+
+  </a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive" >
+
+
+    <ul class="navbar-nav navbar-sidenav overflow-y-scroll-resonsive" id="exampleAccordion">
+
+
+
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+        <a class="nav-link" href="create-channel.php">
+          <i class="fas fa-fw fa-plus"></i>
+          <span class="nav-link-text">
+
+            <span class="parse_nav_new_channel"></span>
+
+          </span>
+        </a>
+      </li>
+
+
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#channelMenu" data-parent="#exampleAccordion">
+          <i class="fas fa-chart-area"></i>
+          <span class="nav-link-text">
+
+            <span class="parse_nav_your_channels"></span>
+
+          </span>
+        </a>
+        <ul class="sidenav-second-level collapse" id="channelMenu">
+
+        </ul>
+      </li>
+
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#sharedSubmenu" data-parent="#exampleAccordion">
+          <i class="fa fa-fw fa-share-alt"></i>
+          <span class="nav-link-text">
+
+            <span class="parse_nav_shared_channels"></span>
+
+          </span>
+        </a>
+        <ul class="sidenav-second-level collapse" id="sharedSubmenu">
+
+        </ul>
+      </li>
+
+      <li><hr></li>
+
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+        <a class="nav-link" data-toggle="modal" data-target="#startPj">
+          <i class="fa fa-fw fa-plus"></i>
+          <span class="nav-link-text">
+
+            <span class="parse_nav_new_project"></span>
+
+          </span>
+        </a>
+      </li>
+
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#list-projects" data-parent="#exampleAccordion">
+          <i class="fa fa-fw fa-inbox"></i>
+          <span class="nav-link-text">
+
+            <span class="parse_nav_your_projects"></span>
+
+          </span>
+        </a>
+        <ul class="sidenav-second-level collapse" id="list-projects">
+
+        </ul>
+      </li>
+
+
+
+    </ul>
+
+
+    <ul class="navbar-nav sidenav-toggler">
+      <li class="nav-item">
+        <a class="nav-link text-center" id="sidenavToggler">
+          <i class="fa fa-fw fa-angle-left"></i>
+        </a>
+      </li>
+    </ul>
+
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+
+        <div class="control-group">
+          <select style="width: 300px;" id="search-select-to" class="contacts" placeholder="Cerca per canale, utente, tipo dato..."></select>
+        </div>
+        <!-- <select  id="search-select-to" class="" placeholder="Cerca un canale, utente, categoria"></select> -->
+
+
+      </li>
+
+      <li class="nav-item" style="margin-left: 15px;">
+        <a class="nav-link" id="username-db">
+
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <i class="fas fa-fw fa-sign-out-alt"></i>
+
+          <span class="parse_nav_logout"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

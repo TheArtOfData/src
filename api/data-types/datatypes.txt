@@ -1,0 +1,9 @@
+Umidita
+Pressione
+Consumo
+Temperatura
+Spazio
+Passi
+Calorie
+Peso
+Altezza

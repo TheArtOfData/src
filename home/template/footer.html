@@ -1,0 +1,101 @@
+<!-- TheArtOfData
+   Copyright (C) 2018  by Anceschi Giovanni, Belmonte Luca, Boschini Matteo, Mechetti Luca, Monari Pietro, Scarfone Salvatore, Tardini Giovanni
+
+   Mail : theartofdat@gmail.com
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as published
+   by the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Affero General Public License for more details.
+
+   You should have received a copy of the GNU Affero General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
+<footer class="sticky-footer">
+  <div class="container">
+    <div class="text-center">
+      <small>
+
+        <span class="parse_app_copyright"></span>
+
+      </small>
+    </div>
+  </div>
+</footer>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fa fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+          <span class="parse_modal_logout_title"></span>
+
+        </h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <span class="parse_modal_logout_text"></span>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <button id="button-log-out" class="btn btn-primary">
+
+          <span class="parse_nav_logout"></span>
+
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal create project -->
+<div class="modal fade" id="startPj">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h3>Creazione progetto</h3>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <p>Come si chiama il tuo progetto?</p>
+          <input type="text" class="form-control" id="pjtitle" name="pjtitle" placeholder="Titolo">
+        </div>
+        <br>
+        <p>Immagine di copertina</p>
+
+        <input id="frontimg" name="frontimg" type="file">
+
+        <hr>
+        <div id="errorBlock" class="help-block"></div>
+
+
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <button id="createpj" class="btn btn-primary">Crea Progetto!</button>
+      </div>
+
+    </div>
+  </div>
+</div>

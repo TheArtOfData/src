@@ -1,0 +1,429 @@
+/* TheArtOfData
+   Copyright (C) 2018  by Anceschi Giovanni, Belmonte Luca, Boschini Matteo, Mechetti Luca, Monari Pietro, Scarfone Salvatore, Tardini Giovanni
+
+   Mail : theartofdat@gmail.com
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as published
+   by the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Affero General Public License for more details.
+
+   You should have received a copy of the GNU Affero General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>. */
+/*
+    DEMO STYLE
+*/
+
+
+body {
+
+    background: #fafafa;
+}
+
+.selectize-dropdown, .selectize-dropdown.form-control{
+    height: calc(100vh - 300px) !important;
+}
+
+.selectize-dropdown-content{
+    max-height: 100% !important;
+    height: 100% !important;
+}
+
+
+p {
+
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #555;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    margin: 40px 0;
+}
+
+i, span {
+    display: inline-block;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    min-width: 250px;
+    max-width: 250px;
+    /* background: #2b1c46;
+    color: #fff; */
+    background: whitesmoke;
+    transition: all 0.3s;
+    overflow-y : scroll;
+}
+
+@-moz-document url-prefix() {
+
+    #sidebar{
+        width:500px;
+    }
+
+}
+
+#sidebar.active {
+    min-width: 90px;
+    max-width: 90px;
+    text-align: center;
+}
+
+#sidebar.active .sidebar-header h3, #sidebar.active .CTAs {
+    display: none;
+}
+
+#sidebar.active .sidebar-header h3 {
+    display: none;
+}
+
+
+#sidebar ul li a {
+    text-align: left;
+}
+
+
+
+#sidebar.active ul li a {
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+#sidebar.active ul li a i {
+
+    margin-right:  0;
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+#sidebar.active ul ul a {
+    padding: 10px !important;
+    word-break: break-all;
+}
+
+#sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
+    top: auto;
+    bottom: 5px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: whitesmoke;
+}
+
+
+.sidebar-header img{
+    margin: 0 auto;
+    cursor:pointer;
+    transition: transform 0.5s;
+}
+
+.sidebar-header img:hover{
+    transform:scale(1.2,1.2);
+}
+
+#sidebar.active .sidebar-header img{
+    margin: 0 auto;
+    margin-top:15px;
+    transform: scale(1.3,1.3);
+}
+
+.sidebar-header h3{
+    text-align: center;
+    margin-top:20px;
+}
+
+
+#sidebar ul.components {
+    padding: 10px 0;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    /* color: #7386D5; */
+    color: #54a0ff;
+    background: #fff;
+}
+#sidebar ul li a i {
+    margin-right: 10px;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    /* background: #6d7fcc; */
+    background: #54a0ff;
+
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+/* #sidebar{
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+
+#sidebar.active{
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+
+
+#sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+#sidebar.active::-webkit-scrollbar {
+    display: none;
+} */
+
+
+
+#sidebar ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    /* background: #6d7fcc; #54a0ff*/
+    background: #54a0ff;
+    color: #fff;
+}
+
+
+a.article, a.article:hover {
+    /* background: #6d7fcc !important; */
+    background: #54a0ff !important;
+
+    color: #fff !important;
+}
+
+.glyph-text{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    margin-left:5px;
+}
+
+.circle{
+    float: right;
+}
+
+.circle img{
+  vertical-align: middle;
+  position: relative;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    width: calc(100% - 250px);
+    padding: 20px 40px 40px 40px;
+    min-height: 100vh;
+    transition: all ease-in 0.5s;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    overflow-x:hidden;
+}
+#content.active {
+    width: 100%;
+    position: relative;
+    overflow-x:hidden;
+}
+
+#main-content a {
+  color: #54a0ff ;
+}
+
+#main-content a:hover {
+  color: #4a8ce0 !important;
+}
+
+/* ---------------------------------------------------
+    WIDGET STYLE
+----------------------------------------------------- */
+
+.chart-container{
+    width:900px;
+}
+
+.amChartsInputField {
+    height: 30px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.amcharts-chart-div a {
+  display: none !important;
+}
+
+
+
+/* .export-main a:hover {
+  background: whitesmoke !important;
+} */
+
+
+
+/*
+.mce-tinymce.mce-container.mce-panel {
+    border: 2px dashed blue !important;
+    border-radius: 17px;
+ }*/
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (min-width: 769px) {
+  #sidebar-toggle-button {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+    /* a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+        top: auto;
+        bottom: 5px;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+    } */
+
+    /* #sidebar .sidebar-header h3, #sidebar .CTAs {
+        display: none;
+    }
+
+    #sidebar ul li a {
+        padding: 20px 10px;
+    }
+
+    #sidebar ul li a span {
+        font-size: 0.85em;
+    }
+    #sidebar ul li a i {
+        margin-right:  0;
+        display: block;
+    }
+
+    #sidebar ul ul a {
+        padding: 10px !important;
+    }
+
+    #sidebar ul li a i {
+        font-size: 1.3em;
+    } */
+
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%
+    }
+    #content.active {
+        width: calc(100%);
+    }
+
+    /* #content.active ul li a{
+        display: block;
+    } */
+
+    /* #sidebarCollapse span {
+        display: none;
+    } */
+
+}

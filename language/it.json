@@ -1,0 +1,66 @@
+{
+  "app": {
+    "app_name":  "TheArtOfData",
+    "app_motto": "Scopri la potenza dei dati<br>Piattaforma Open Source di analisi e visualizzazione dati",
+    "app_copyright": "Copyright © theartofdata.tech 2018",
+
+    "nav_projects": "Progetti",
+
+    "nav_login": "Accedi",
+    "nav_logout": "Esci",
+
+    "nav_new_channel": "Nuovo canale",
+    "nav_your_channels": "I tuoi canali",
+    "nav_shared_channels": "Canali condivisi",
+    "nav_new_project": "Nuovo progetto",
+    "nav_your_projects": "I tuoi progetti",
+
+    "modal_logout_title": "Sicuro di uscire?",
+    "modal_logout_text": "Cliccando 'Logout' chiuderai la sessione corrente.",
+
+    "channel_name": "Nome canale",
+    "create_channel": "Crea canale",
+    "place": "Luogo",
+    "description": "Descrizione",
+    "visibility": "Visibilità",
+
+    "public": "Pubblico",
+    "private": "Privato",
+    "data": "Dati",
+    "share": "Condividi",
+    "action": "Azioni",
+
+    "no_graph": "Nessun grafico creato"
+  },
+
+  "landing_page": {
+    "header_title": "Scopri la potenza dei dati",
+    "header_button": "Inizia subito" ,
+
+    "section_1_sup": "ESTRAI LE INFORMAZIONI",
+    "section_1_title": "Carica i tuoi dati",
+    "section_1_text": "Carica qualsiasi dato con semplicità, in automatico con Raspberry e Arduino o manualmente",
+
+    "section_2_sup": "SFRUTTA LO STRUMENTO",
+    "section_2_title": "Visualizza i tuoi grafici",
+    "section_2_text": "Accedi ai tuoi canali e visualizza con un click i dati su grafici interattivi",
+
+    "section_3_sup": "LANCIA IN RETE",
+    "section_3_title": "Condividi i tuoi canali",
+    "section_3_text": "Condividi i tuoi canali, grafici e progetti sui social network e dovunque desideri",
+
+
+    "section_4_title": "PROGETTI",
+    "section_4_text": "In questa sezione potrai rendere pubblica una tua idea e spiegare a tutti come l'hai organizzata",
+
+
+    "section_5_title": "GITHUB",
+    "section_5_text": "Entra nella nostra repository Open Source e contribuisci a migliorare questa piattaforma assieme ad altri sviluppatori",
+
+
+    "section_6_title": "ENERGY WAY",
+    "section_6_text": "Sponsor Ufficiale"
+  }
+
+
+}

@@ -1,0 +1,185 @@
+/* TheArtOfData
+   Copyright (C) 2018  by Anceschi Giovanni, Belmonte Luca, Boschini Matteo, Mechetti Luca, Monari Pietro, Scarfone Salvatore, Tardini Giovanni
+
+   Mail : theartofdat@gmail.com
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as published
+   by the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Affero General Public License for more details.
+
+   You should have received a copy of the GNU Affero General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>. */
+body {
+
+}
+
+* {
+  transition: all 0.5s ease;
+}
+
+.containe {
+  position: absolute !important;
+  width: 100%;
+  height: 100% !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+  /* background: -webkit-linear-gradient(to right, #009bde, #009bde);
+  background: linear-gradient(to right, #009bde, #009bde);  */
+}
+
+
+
+.wrapper-login {
+  width: 800px !important;
+  height: 540px !important;
+  background: white;
+  border-radius: 10px;
+
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.wrapper-login:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/*
+  FORM
+*/
+
+.login100-pic {
+  width: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  align-items: center;
+}
+.login-100-img > h3 , .login-100-img > h4{
+  font-weight: lighter;
+}
+
+.login-100-text {
+  outline: none;
+
+  display: block;
+
+  background-image: none !important;
+  font-size: 12pt ;
+  font-weight: lighter ;
+  width: 255px ;
+  height: 45px ;
+  border: none ;
+  background: #009bde ;
+  color: white ;
+  padding: 15px 20px ;
+  border-radius: 30px ;
+  box-shadow: inset -4px -4px 50px rgba(255,255,255,0.3) ;
+}
+
+.login-100-text:focus{
+
+}
+
+.login-100-button {
+  font-size: 13pt !important;
+  height: 40px !important;
+  text-align: center !important;
+  width: 130px !important;
+  background: #fff !important;
+  color: black !important;
+  border-radius: 30px !important;
+  text-align: center !important;
+  transition: background 0.7s ease !important;
+}
+
+.login-100-button:hover {
+  background: #eee !important;
+}
+
+#form-result {
+  max-width: 255px;
+}
+
+a {
+  color: #3dc4ff !important;
+}
+
+a:hover{
+  color: #00adf9 !important;
+  text-decoration: none !important;
+}
+
+a:visited {
+  text-decoration: none !important;
+
+}
+
+
+.login-100-text::-webkit-input-placeholder { color: white !important; }  /* WebKit, Blink, Edge */
+.login-100-text:-moz-placeholder { color: white !important; }  /* Mozilla Firefox 4 to 18 */
+.login-100-text::-moz-placeholder { color: white !important; }  /* Mozilla Firefox 19+ */
+.login-100-text:-ms-input-placeholder { color: white !important; }  /* Internet Explorer 10-11 */
+.login-100-text::-ms-input-placeholder { color: white !important; }  /* Microsoft Edge */
+
+
+/*
+  DISPLAY RESOLUTION
+*/
+
+
+@media (max-width: 890px) and (max-height: 650px ){
+  .login-100-img {
+    display: none !important;
+  }
+}
+
+@media (max-width: 890px) {
+  .wrapper-login {
+    width: 90%;
+  }
+  .login-100-img {
+  }
+  .login-100-img > img {
+    width: 200px !important;
+  }
+  .wrapper-login {
+    width: 98% !important;
+    height: 100% !important;
+  }
+  .login100-pic {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
