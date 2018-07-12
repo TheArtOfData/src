@@ -36,6 +36,7 @@ You can also insert images or embed videos to support your explanation.
 * [particles.js](https://github.com/VincentGarreau/particles.js/)
 * [jquery-easing](http://gsgd.co.uk/sandbox/jquery/easing/)
 * [fontawesome](https://fontawesome.com/)
+* [prismjs](https://github.com/PrismJS/prism)
 
 ## Contributing
 
