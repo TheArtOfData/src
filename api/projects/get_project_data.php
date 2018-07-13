@@ -35,11 +35,37 @@
   if(exist_project_by_url($url)){
     $project_data = get_project_data_by_url($url);
 
-    $token_img = get_media_token_by_id($project_data['img']);
-    $project_data['img'] = $token_img;
-    $project_data['user_id'] = -1;
-    $project_data['project_id'] = -1;
-    respond($project_data);
+    $can_see = false;
+
+    if(isset($_POST['JWT_token'])){
+      $jwt = $_POST['JWT_token'];
+
+      if(JWT::checkJWT($jwt)){
+        $user_email = JWT::get_user_email($jwt);
+        if(exist_user($user_email)){
+          $user_id = get_user_data($user_email,'user_id');
+
+          if($project_data['published'] == 0 && $project_data['user_id'] == $user_id) $can_see = true;
+        } else respond($R['wrong-token']);
+      } else respond($R['wrong-token']);
+    }
+
+    if($project_data['published'] == 1 || $can_see){
+      $token_img = get_media_token_by_id($project_data['img']);
+      $project_data['img'] = $token_img;
+
+      $user_id = $project_data['user_id'];
+      $project_data['user_id'] = -1;
+
+
+      $project_data['username'] = get_user_data_id($user_id, "username");
+
+      $project_data['project_id'] = -1;
+
+      respond($project_data);
+    }else respond(false);
+
+
 
   } else respond(false);
 

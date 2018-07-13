@@ -16,34 +16,29 @@
 //
 //    You should have received a copy of the GNU Affero General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-require_once(__DIR__."/../db/projects_db.php");
-require_once(__DIR__."/../db/user_db.php");
+  require_once(__DIR__."/../db/projects_db.php");
+  require_once(__DIR__."/../db/user_db.php");
+  require_once(__DIR__."/../db/media_db.php");
 
-
-header('Content-Type: application/json');
-
-
-if(!@val_req($_POST['username'])||
- !@val_req($_POST['title']))
- respond($R['missing-variables']);
-
-$username = $_POST['username'];
-$title = trim($_POST['title']);
+  header('Content-Type: application/json');
 
 
 
-if(exist_user($username)){
-  $user_id = get_user_data($username,'user_id');
-  if(exist_project($user_id, $title)){
-    $data = get_project_data($user_id, $title);
+  if(!@val_req($_POST['url']))
+   respond($R['missing-variables']);
 
-    if($data['published'] === 1) {
-      respond($data);
-    }
+  $url = trim($_POST['url']);
+
+
+  if(exist_project_by_url($url)){
+    $project_data = get_project_data_by_url($url);
+
+    $token_img = get_media_token_by_id($project_data['img']);
+    $project_data['img'] = $token_img;
+    $project_data['user_id'] = -1;
+    $project_data['project_id'] = -1;
+    respond($project_data);
+
   } else respond(false);
-} else respond($R['wrong-token']);
-
-
-
 
 ?>

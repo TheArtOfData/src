@@ -32,21 +32,12 @@
 </head>
 
 <body class="fixed-nav sticky-footer bg-light" id="page-top">
-  <!-- Navigation-->
-
-  <?php require("template/nav-bar.html"); ?>
-
-
-  <div class="content-wrapper">
-    <div class="container-fluid">
-
-
-
-    </div>
-    <?php require("template/footer.html"); ?>
-  </div>
-
   <script src="/js/dashboard/main.js" charset="utf-8"></script>
+  <script>
+    getUserData('username', function(data){
+        window.location = "/home/" + data + "/";
+    })
+  </script>
 
 </body>
 

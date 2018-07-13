@@ -130,7 +130,7 @@
             <div class="card-header">
               <i class="fa fa-info"></i> Info</div>
             <div class="card-body">
-              <p>I canali del portale #alloraspengo sono gli spazi in cui gli utenti possono caricare i propri dati e visualizzarli al meglio tramite diversi tipi di grafici.</p>
+              <p>I canali del portale TheArtOfData sono gli spazi in cui gli utenti possono caricare i propri dati e visualizzarli al meglio tramite diversi tipi di grafici.</p>
               <h4 class="light">Ogni canale è identificato da:</h4>
               <ul>
                 <li><p>Un nome</p></li>

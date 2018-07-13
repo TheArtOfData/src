@@ -22,8 +22,12 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Condividi i tuoi progetti. Cerca e crea tutorial, trova il progetto che fa per te e realizza subito il tuo tutorial! TheArtOfProjects community. ">
+    <meta name="description" content="Scopri la piattaforma Open Source di analisi e visualizzazione dati">
     <meta name="author" content="">
+    <meta property="fb:app_id" content="1861801120790645" />
+    <meta property="og:url" content="https://theartofdata.tech/" >
+    <meta property="og:type" content="article" >
+    <meta property="og:image" content="https://theartofdata.tech/img/grafo4k-min.png" >
 
     <link rel="shortcut icon" href="/img/favicon.ico">
 
@@ -32,11 +36,11 @@
     <?php require("../template/import.html"); ?>
     <?php require("template/import.html"); ?>
 
-    <style media="screen">
-    #particles-js-project canvas {
-      height: 300px !important;
-    }
-    </style>
+    <?php
+    echo '<script type="text/javascript">',
+         'var URL = "' . @$_GET['url'] . '";',
+         '</script>';
+    ?>
 
   </head>
 
@@ -45,43 +49,37 @@
     <?php require("../template/nav-bar.html"); ?>
 
 
-    <header class="header-project d-flex" >
-      <div class="" id="particles-js-project"></div>
-      <div class="container my-auto" >
-        <h1 style="font-size: 31pt">Esplora e <br>sperimenta i progetti</h1>
-      </div>
-    </header>
+    <section id="project-front-img" class="project-view-header d-flex">
 
-    <section class="nav-link">
-      <div class="container">
-        <p class="text-muted mb-0"> <a href="/">home</a> / projects</p>
-      </div>
+        <div class="" id="particles-js-project">
 
-    </section>
-
-
-    <section class="card-container pt-0">
-      <div class="container">
-        <div class="row" id="projects-container">
-
-          <!--
-
-            CONTENT HERE
-
-          -->
-
+        </div>
+        <div class="container my-auto" style="padding: 60px 0">
+          <div class="row">
+            <div class="col-10 mx-auto">
+              <h1 id="project-title"></h1>
+              <h5 class="" id="project-sub-title">Creato da Luca Belmonte</h5>
+            </div>
+          </div>
         </div>
 
 
-      </div>
     </section>
 
+
+    <section class="project-content">
+      <div class="container " id="project-container">
+
+
+      </div>
+    </section>
 
 
     <?php require("../template/footer.html"); ?>
     <!-- Custom scripts for this template -->
-    <script src="../js/homepage.js" charset="utf-8"></script>
-    <script src="../js/projects/projects-index.js" charset="utf-8"></script>
+    <script src="../js/homepage.js"></script>
+    <script src="../js/projects/view.js"></script>
+
 
 
     <!--

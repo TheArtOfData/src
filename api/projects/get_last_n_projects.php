@@ -16,8 +16,10 @@
 //
 //    You should have received a copy of the GNU Affero General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 require_once(__DIR__."/../db/projects_db.php");
 require_once(__DIR__."/../db/user_db.php");
+require_once(__DIR__."/../db/media_db.php");
 
 
 header('Content-Type: application/json');
@@ -25,17 +27,23 @@ header('Content-Type: application/json');
 
 if(!@val_req($_POST['n']))
  respond($R['missing-variables']);
-else{
-  $data =get_last_n_projects($_POST['n']);
-  $arr= $data ;
-  for ($i = 0; $i < sizeof($arr); $i++){
-    $id=$arr[$i]['user_id'];
-    $name=get_user_data_id($id, "username");
-    $arr[$i]['username']=$name;
-  }
-  $data = $arr;
-  respond($data);
+
+$n_post = trim($_POST['n']);
+
+$data = get_last_n_projects($_POST['n']);
+
+foreach ($data as $key => $value) {
+  $img_id = $data[$key]['img'];
+  $user_id = $data[$key]['user_id'];
+
+  $data[$key]['img'] = get_media_token_by_id($img_id);
+  $data[$key]['user'] = get_user_data_id($user_id, "username");
+
+  
+  $data[$key]['project_id'] = -1; // safety
+  $data[$key]['user_id'] = -1; // safety
 }
 
+respond($data);
 
 ?>

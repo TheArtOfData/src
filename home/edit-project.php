@@ -170,9 +170,10 @@
           <div class="card-body mb-3">
             <div class="btn-group-vertical buttons w-100 pb-4" role="group" aria-label="Basic example">
               <!-- <button type="button" class="btn btn-outline-secondary" id="previewbtn" data-toggle="modal" data-target="#previewmodal">Anteprima</button> -->
-              <button type="button" class="btn btn-outline-success" id="save-all"><i class="fa fa-save"></i> Salva</button>
-              <!-- <button type="button" class="btn btn-outline-primary">Pubblica</button> -->
+              <button type="button" class="btn btn-light" id="save-all"><i class="fa fa-save"></i> Salva</button>
+              <a class="btn btn-light" href="" id="project-link" target="_blank"><i class="fas fa-link"></i> Visualizza</a>
             </div>
+
 
 
             <div class="alert alert-success" id="pjstatealert" role="alert" style="display: none">
@@ -183,6 +184,18 @@
               <input type="text" class="form-control" name="categories" id="categories">
             </div>
 
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-info"></i> Info
+          </div>
+          <div class="card-body">
+            <button type="button" name="button" class="btn btn-primary w-100 mb-3" id="project-publish"><i class="fas fa-globe-americas"></i> Pubblica</button>
+            <button type="button" name="button" class="btn btn-primary w-100 mb-3" id="project-unpublish"><i class="fas fa-lock"></i> Nascondi</button>
+
+            <p><strong>Stato</strong>: <span id="project-visibility"></span></p>
           </div>
         </div>
 

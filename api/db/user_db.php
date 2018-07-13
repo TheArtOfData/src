@@ -127,7 +127,7 @@ function is_verified($user_email){
 
 
 function send_verification_email($email){
-  //// TODO: swag
+
 }
 
 function verify($username){

@@ -42,6 +42,7 @@ a {
 
 a:hover {
   color: #276eb5;
+  text-decoration: none;
 }
 
 h1,
@@ -93,7 +94,9 @@ section {
 }
 
 section#footer{
+  background-color: #f7f7f7;
   padding: 3rem 0;
+
 }
 
 ::-moz-selection {
@@ -121,7 +124,6 @@ img::-moz-selection {
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color: #fff;
-  font-family: 'Ubuntu', sans-serif;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
@@ -167,11 +169,13 @@ img::-moz-selection {
   }
   #mainNav .navbar-brand {
     /* color: rgba(255, 255, 255, 0.9); */
-    color: rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.95);
+    border-top: none;
+
   }
   #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
     /* color: #fff; */
-    color: rgba(0,0,0,0.95);
+    color: rgba(0,0,0,1);
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link {
     padding: 0.5rem 1rem;
@@ -229,7 +233,10 @@ header.masthead hr {
 }
 
 header.masthead h1 {
+  letter-spacing: -5px !important;
+
   font-size: 3rem;
+  font-weight: 500;
 }
 
 header.masthead p {
@@ -374,4 +381,31 @@ header.masthead p {
 
 .light {
   font-weight: 300;
+}
+
+.section-col-footer {
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.section-col-footer:hover {
+  transform: scale(1.05);
+}
+
+.preloader-wrapper {
+  height: 100%;
+  width: 100%;
+  background: #FFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+}
+
+.preloader-wrapper .preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 120px;
 }

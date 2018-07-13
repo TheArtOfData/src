@@ -1,0 +1,122 @@
+/*
+Copyright (C) 2018  by Anceschi Giovanni, Belmonte Luca, Boschini Matteo, Mechetti Luca, Monari Pietro, Scarfone Salvatore, Tardini Giovanni
+
+Mail : theartofdat@gmail.com
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
+  index.php
+*/
+
+.header-project {
+  height: 300px;
+  background-color: #f7f7f7;
+}
+
+.header-project h1 {
+  font-weight: 300;
+
+}
+
+
+.card-container {
+  padding: 2rem 0;
+  background-color: #fff;
+}
+
+.nav-link {
+  padding: 2rem 0;
+}
+
+.card-container .card {
+  min-width: 250px;
+  max-width: 500px;
+
+  border: none;
+  margin-bottom: 2rem;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  border-radius: 3px;
+}
+
+.card-container .card:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  transform: scale(1.04);
+}
+
+.card-container .card a .card-title {
+  color: #212529;
+}
+
+.card-container .card a .card-title:hover {
+  color: #0062cc;
+}
+
+
+/* PARTICLE EFFECTS */
+/* #particles-js-project canvas {
+  height: 300px !important;
+} */
+
+#particles-js-project {
+  position: absolute;
+  width: 100% !important;
+  height: 300px !important;
+}
+
+/*
+  view.php
+*/
+.project-view-header {
+  min-height: 300px;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.bg-opc-white {
+  position: absolute;
+  width: 100%;
+  min-height: 300px;
+  background-color: #f7f7f7;
+  opacity: 0.8;
+}
+
+.project-view-header h1 {
+  font-size: 31pt;
+
+}
+
+.project-view-header h1, .project-view-header h5 {
+  font-weight: 300;
+}
+
+.project-content {
+  padding: 2rem 0;
+}
+
+.project-content p{
+  margin-bottom: 2rem;
+}
+
+.project-content p, .project-content li, .project-content a {
+  font-size: 1.2em;
+}
+
+.project-content .card-columns .card {
+  min-width: 200px;
+  max-width: 400px;
+  margin-bottom: 1.5rem;
+}

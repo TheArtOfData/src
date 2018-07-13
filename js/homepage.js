@@ -96,7 +96,7 @@
   });
 
 
-  $.getJSON("language/" + LANG + ".json", function(data){
+  $.getJSON("/language/" + LANG + ".json", function(data){
 
 
     let app = data.landing_page;
@@ -198,7 +198,7 @@
         m.init();
     }
 
-
+    
     var messenger = new Messenger($('#messenger'));
 
 })(jQuery); // End of use strict

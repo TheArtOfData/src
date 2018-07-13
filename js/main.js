@@ -339,17 +339,18 @@ function searchUser(data_query, result){
 
 // PROJECT
 
-function getProjectData(username, title, result){
-  $.post("/api/projects/get_project.php",
-    {
-      username: username,
-      title: title
-    }, function(data, status){
-      result(data);
-    }
-  );
-
-}
+// function getProjectData(username, title, result){
+//   $.post("/api/projects/get_project.php",
+//     {
+//
+//       username: username,
+//       title: title
+//     }, function(data, status){
+//       result(data);
+//     }
+//   );
+//
+// }
 
 function getComments(username, title, result){
   $.post("/api/projects/comments/get_project_comments.php",
@@ -386,7 +387,20 @@ function getProjectData(url, result){
 	$.post(
 		'../api/projects/get_project_data.php',
 		{
+      JWT_token: Cookies.get("JWT_token"),
       url: url
+		},
+		function(data, status){
+			result(data);
+		}
+	);
+}
+
+function getLastNProjects(n, result){
+	$.post(
+		'../api/projects/get_last_n_projects.php',
+		{
+      n: n
 		},
 		function(data, status){
 			result(data);
@@ -423,12 +437,25 @@ function updateTitle(url, title, result){
   )
 }
 
+function updateVisibility(url, vis, result){
+  let jwt = Cookies.get('JWT_token');
+  $.post(
+    '../api/projects/update_visibility.php',
+    {
+      JWT_token: jwt,
+      url: url,
+      visibility: vis
+    },
+    function(data, status){
+      result(data);
+    }
+  )
+}
+
 function getStepsData(url, result){
-	let jwt = Cookies.get('JWT_token');
 	$.post(
 		'../api/projects/get_steps_data.php',
 		{
-			JWT_token: jwt,
       url: url
 		},
 		function(data, status){
@@ -464,11 +491,9 @@ function updateStep(url, stepNum, title, content){
 }
 
 function getStepMedia(url, stepNum, result){
-	let jwt = Cookies.get('JWT_token');
 	$.post(
 		'../api/projects/get_step_media.php',
 		{
-			JWT_token: jwt,
       url: url,
       step_num: stepNum
 		},

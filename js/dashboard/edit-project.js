@@ -71,14 +71,15 @@ function addStep(stepNumber){
 
       <hr>
 
-      <h5>Immagini</h5>
+      <h4>Immagini</h4>
+      <p>Max file 3.5MB</p>
       <div class="file-loading">
         <input id="imgstep` + stepNumber + `" name="imgstep" type="file" multiple>
       </div>
 
       <hr>
 
-      <h5>Testo</h5>
+      <h4>Testo</h4>
       <textarea id="editor` + stepNumber + `"></textarea>
 
     </div>
@@ -118,12 +119,26 @@ $(function(){
   // MAIN FUNCTION
 
   getProjectData(url, function(projectData){
+    if(!projectData){
+      window.location = "/home";
+    }
+
     let headerIcon = '<i class="fa fa-inbox"></i> ';
     $('#project-title').html(headerIcon + projectData.title);
 
     $('#new-project-title').val(projectData.title);
-
+    $('#project-link').attr("href", "/projects/view.php?url=" + url);
     // input front img
+    let published = projectData.published;
+
+    if(published == 1){
+      $('#project-visibility').text("Pubblicato");
+      $('#project-publish').hide();
+    } else {
+      $('#project-visibility').text("Non pubblicato");
+      $('#project-unpublish').hide();
+
+    }
 
     let fronImgToken = projectData.img;
 
@@ -141,6 +156,7 @@ $(function(){
       initialPreviewAsData: true,
       initialPreviewDownloadUrl: '/api/media/get_media.php?token={key}',
       //deleteUrl: '/api/media/delete_media.php?token={key}',
+      maxFileSize: 3500,
       showUpload: true,
       allowedFileExtensions: ["jpg", "jpeg", "gif", "png"],
       elErrorContainer: "#errorFrontImg",
@@ -221,6 +237,7 @@ $(function(){
         {text: 'C', value: 'c'},
         {text: 'C#', value: 'csharp'},
         {text: 'C++', value: 'cpp'},
+        {text:"batch",value:"batch"},
         {text: 'Bash', value: 'bash'}
       ]};
     let fileinputConfig = {
@@ -231,6 +248,7 @@ $(function(){
       dropZoneTitle:"Carica qui le tue immagini",
       uploadUrl: "/api/projects/upload_images_step.php",
       uploadClass: "btn btn-success",
+      maxFileSize: 3500,
       theme: "fa",
       browseLabel: "Seleziona ...",
       overwriteInitial: false,
@@ -420,12 +438,36 @@ $(function(){
     });
 
     /**
+    * @event onClick(project-publish)
+    */
+
+    $('#project-publish').click(function(){
+      updateVisibility(url, 1);
+
+      location.reload();
+    })
+
+    /**
+    * @event onClick(project-unpublish)
+    */
+
+    $('#project-unpublish').click(function(){
+      updateVisibility(url, 0);
+
+      location.reload();
+    })
+
+    /**
     * @event onSubmit(#change-pregect-title-form)
     */
     $(document).on('submit', '#change-project-title-form', function(e){
       e.preventDefault();
       let title = $('#new-project-title').val().trim();
       if(!title || title == "") return;
+      if(title.lenght > 100) {
+        alert("Max 150 characters!");
+        return;
+      };
 
       updateTitle(url, title);
 
@@ -489,6 +531,7 @@ $(function(){
             dropZoneTitle:"Carica qui le tue immagini",
             uploadUrl: "/api/projects/upload_images_step.php",
             uploadClass: "btn btn-success",
+            maxFileSize: 3500,
             theme: "fa",
             browseLabel: "Seleziona ...",
             overwriteInitial: false,

@@ -1,0 +1,33 @@
+RewriteEngine on
+
+Options -Indexes
+
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+#######
+
+RewriteRule ^home/index\.php$ - [L]
+
+RewriteRule ^home/([^/]+)/([^/]+) /home/channel.php?username=$1&channel_name=$2 [L,QSA,NC]
+
+RewriteRule ^home/([^/]+)/$ /home/profile.php?username=$1 [L,QSA,NC]
+RewriteRule ^home/create_channel$ /home/create-channel.php [NC]
+RewriteRule ^home/create_project$ /home/create-project.php [NC]
+RewriteRule ^home/search$ /home/search.php [NC]
+
+
+#######
+
+
+RewriteRule ^dashboard/index\.php$ - [L]
+RewriteRule ^dashboard/([^/]+)/([^/]+) /dashboard/channel.php?username=$1&channel_name=$2 [L,QSA,NC]
+RewriteRule ^dashboard/([^/]+)/$ /dashboard/profile.php?username=$1 [L,QSA,NC]
+
+
+########
+
+RewriteRule ^projects/index\.php$ - [L]
+
+RewriteRule ^projects/([^/]+)/([^/]+) /projects/post.php?username=$1&title=$2 [L,QSA,NC]

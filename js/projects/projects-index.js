@@ -15,76 +15,61 @@
 //
 //   You should have received a copy of the GNU Affero General Public License
 //   along with this program.  If not, see <http://www.gnu.org/licenses/>.
-$('#preload').show();
+
+
 
 $(function () {
-  getRandomImg("project", function(img){
+  let n = 100;
 
-    let url = img.urls.regular;
-    let user = img.user;
-    console.log(img);
-    $('#header-bg').css("backgroundImage", "url(" + url + ")");
-    $('#bg-credit-author').attr("href", user.links.html + "?utm_source=theartofdata&utm_medium=referral").html(img.user.username);
-    $('#bg-credit-referral').attr("href", img.links.html + "?utm_source=theartofdata&utm_medium=referral");
+  getLastNProjects(n, function(data){
+    console.log(data);
+    let totalContent = "";
 
-    $('<img/>').attr('src', url).on('load', function() {
-       $(this).remove(); // prevent memory leaks as @benweet suggested
-       //$('body').css('background-image', 'url(http://picture.de/image.png)');
-       $('#header-bg').css("backgroundImage", "url(" + url + ")");
+    for(let i in data){
+      let actualData = data[i];
+
+      let title = actualData.title;
+      let author = actualData.user;
+      let url = actualData.url;
+      let imgToken = actualData.img;
+
+      totalContent += getPostTemplate(title, author, url, imgToken);
+    }
+
+    $('#projects-container').html(totalContent);
+
+    window.sr = ScrollReveal();
+    sr.reveal('.sr-img', {
+      duration: 700,
+      scale: 0.5
     });
 
-    setTimeout(function(){
-      $('#preload').hide();
-    }, 300);
 
-  });
+    $('#preload').fadeOut();
+  })
+
+  let projectFrontImg = $('#project-front-img').height();
 
 
-  $('.ml11 .letters').each(function(){
-    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-  });
+  $('#particles-js-project canvas').height(projectFrontImg);
 
-anime.timeline({loop: false})
+  let particlesJsProject = $('#particles-js-project canvas').height();
+});
 
-  .add({
-    targets: '.ml11 .line',
-    translateX: [0,$(".ml11 .letters").width()],
-    easing: "easeOutExpo",
-    duration: 700,
-    delay: 100
-  }).add({
-    targets: '.ml11 .letter',
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 900,
-    offset: '-=775',
-    delay: function(el, i) {
-      return 50 * (i+1)
-    }
-  });
-  $.post('../api/projects/get_last_n_projects.php',
-    {
-      n: 8
-    },
-    function(data, status){
-
-      for (var i = 0; i < data.length; i++) {
-          $('#content').append(` <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-              <div class="card h-100" style="padding : 5px ;min-height:100% !important;">
-              <div style="height:40%" >
-                <a href="`+  data[i].username   + "/" + data[i].title +`"><img style="height:100%"  class="card-img-top" src="`+   data[i].img +`" alt=""></a>
-              </div>
-                <div class="card-body">
-                  <h1 class="card-title">
-                    <a href="`+  data[i].username   + "/" + data[i].title +`">`+data[i].title+`</a>
-                  </h1>
-                  <a href="../home/`+ data[i].username+`/">  <p>postato da "`+data[i].username+`"</p></a>
-                </div>
-              </div>
-            </div>
-          `);
-
-      }
-    }
-  );
-})
+function getPostTemplate(title, author, url, imgToken){
+  let imgUrl = "/api/media/get_media.php?token=" + imgToken;
+  let postUrl = "/projects/view.php?url=" + url;
+  let authorUrl = "/home/" + author + "/";
+  let template = `
+  <div class="col sr-img">
+    <div class="card" style="">
+      <a href="` + postUrl + `"><img class="card-img-top" src="` + imgUrl + `" alt="Card image cap"></a>
+      <div class="card-body">
+        <a href="` + authorUrl + `"><h6 class="card-subtitle mb-2 text-muted">` + author + `</h6></a>
+        <a href="` + postUrl + `"><h5 class="card-title">` + title + `</h5></a>
+        <p class="card-text"></p>
+      </div>
+    </div>
+  </div>`;
+  return template;
+}

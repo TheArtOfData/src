@@ -22,7 +22,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Scopri la piattaforma Open Source di analisi e visualizzazione dati. Carica dati di ogni genere e visualizzali su grafici interattivi. Condividi i tuoi progetti in modo facile e veloce. Entra a far parte della nostra community!" >
+    <meta name="description" content="La piattaforma Open Source di analisi dati. Carica dati e visualizzali su grafici interattivi. Condividi i tuoi progetti in modo facile e veloce." >
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="/img/favicon.ico">
@@ -128,6 +128,7 @@
      </div>
    </section>
 
+
    <section class="py-5">
     <div class="container ">
       <div class="row d-flex align-items-center">
@@ -150,85 +151,76 @@
           </p>
         </div>
         <div class="col-lg-7 ">
-          <img class="img-fluid sr-img" src="img/homepage/gif-01.gif" alt="">
+          <img class="img-fluid sr-img" src="img/homepage/Team-Energy-Way-2.jpg" alt="">
         </div>
       </div>
     </div>
   </section>
 
 
-    <section class="">
+    <section class="pt-4">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-6 mt-2 text-center">
-            <div class="service-box mx-auto">
-              <i class="fa fa-4x fa-folder-o text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">
+          <div class="section-col-footer col-lg-4 col-md-6 mt-2 text-center pt-4">
+            <a href="/projects" class="text-dark">
+              <div class="service-box mx-auto">
+                <i class="fa fa-4x fa-folder-o text-primary mb-3 sr-icons"></i>
+                <h3 class="mb-3">
 
-                <span class="section_4_title"></span>
+                  <span class="section_4_title"></span>
 
-              </h3>
-              <hr>
-              <p class=" mb-0 ">
+                </h3>
+                <hr>
+                <p class=" mb-0 ">
 
-                <span class="section_4_text"></span>
+                  <span class="section_4_text"></span>
 
-              </p>
-            </div>
+                </p>
+              </div>
+            </a>
           </div>
-          <div class="col-lg-4 col-md-6 mt-2 text-center">
-            <div class="service-box mx-auto">
-              <i class="fa fa-4x fa-github text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">
+          <div class="section-col-footer col-lg-4 col-md-6 mt-2 text-center pt-4">
+            <a href="https://github.com/TheArtOfData/src" target="_blank" class="text-dark">
+              <div class="service-box mx-auto">
+                <i class="fa fa-4x fa-github text-primary mb-3 sr-icons"></i>
+                <h3 class="mb-3">
 
-                <span class="section_5_title"></span>
+                  <span class="section_5_title"></span>
 
-              </h3>
-              <hr>
-              <p class=" mb-0 ">
+                </h3>
+                <hr>
+                <p class=" mb-0 ">
 
-                <span class="section_5_text"></span>
+                  <span class="section_5_text"></span>
 
-              </p>
-            </div>
+                </p>
+              </div>
+            </a>
           </div>
-          <div class="col-lg-4 col-md-6 mt-2 text-center">
+          <div class="section-col-footer col-lg-4 col-md-6 mt-2 text-center pt-4">
+            <a href="https://www.energyway.it/" target="_blank" class="text-dark">
+              <div class="service-box mx-auto">
+                <!-- <i class="fa fa-4x fa-energyway text-primary  mb-3 sr-icons"></i> -->
+                <img src="/img/energy-way.png" class="sr-icons" style="height: 4rem; margin-bottom: 1rem" alt="">
+                <h3 class="mb-3">
 
-            <div class="service-box mx-auto">
-              <i class="fa fa-4x fa-share-alt text-primary  mb-3 sr-icons"></i>
-              <h3 class="mb-3">
+                  <span class="section_6_title"></span>
 
-                <span class="section_6_title"></span>
+                </h3>
+                <hr>
+                <p class=" mb-0 ">
 
-              </h3>
-              <hr>
-              <p class=" mb-0 ">
+                  <span class="section_6_text"></span>
 
-                <span class="section_6_text"></span>
+                </p>
+              </div>
+            </a>
 
-              </p>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- "landing-page": {
-      "header-title": "Scopri la potenza dei dati",
-      "header-button": "Inizia subito",
-
-      "section-1-sup": "ESTRAI LE INFORMAZIONI",
-      "section-1-title": "Carica i tuoi dati",
-      "section-1-text": "Carica qualsiasi dato con semplicità, in automatico con Raspberry e Arduino o manualmente",
-
-      "section-2-sup": "SFRUTTA LO STRUMENTO",
-      "section-2-title": "Visualizza i tuoi grafici",
-      "section-2-text": "Accedi ai tuoi canali e visualizza con un click i dati su grafici interattivi",
-
-      "section-3-sup": "LANCIA IN RETE",
-      "section-3-title": "Condividi i tuoi canali",
-      "section-3-text": "Condividi i tuoi canali, grafici e progetti sui social network e dovunque desideri"
-    } -->
 
 
     <?php require("template/footer.html"); ?>
@@ -244,6 +236,7 @@
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
     <!-- Chart code -->
+    
     <script>
     var chartData = generateChartData();
 
@@ -361,7 +354,7 @@
             "value": 100,
             "density": {
               "enable": true,
-              "value_area": 1000
+              "value_area": 1500
             }
           },
           "color": {
@@ -473,6 +466,7 @@
       }
 
     );
+    $('#preload').fadeOut();
     </script>
 
   </body>

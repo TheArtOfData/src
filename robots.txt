@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: */api/
+Disallow: /LICENSE
+Disallow: /License_header.txt
+
+
+Sitemap: https://theartofdata.tech/sitemap.xml

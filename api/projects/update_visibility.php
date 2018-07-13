@@ -16,6 +16,7 @@
 //
 //    You should have received a copy of the GNU Affero General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
   require_once(__DIR__."/../db/projects_db.php");
   require_once(__DIR__."/../db/user_db.php");
   require_once(__DIR__."/../db/media_db.php");
@@ -23,29 +24,33 @@
   header('Content-Type: application/json');
 
 
-  if(!@val_req($_POST['url']) ||
-     !@isset($_POST['step_num']))
+
+  if(!@val_req($_POST['JWT_token'])||
+     !@val_req($_POST['url']) ||
+     !@isset($_POST['visibility']))
    respond($R['missing-variables']);
 
-
+  $jwt = $_POST['JWT_token'];
   $url = trim($_POST['url']);
-  $step_num = trim($_POST['step_num']);
+  $visibility = trim($_POST['visibility']);
 
+  if(JWT::checkJWT($jwt)){
+    $user_email = JWT::get_user_email($jwt);
+    if(exist_user($user_email)){
+      $user_id = get_user_data($user_email,'user_id');
 
+      if(exist_project_by_url($url)){
+        $project_data = get_project_data_by_url($url);
+        if($project_data['user_id'] == $user_id){
+          $project_id = $project_data['project_id'];
 
-  if(exist_project_by_url($url)){
-    $project_data = get_project_data_by_url($url);
+          update_visibility($project_id, $visibility);
 
-      $project_id = $project_data['project_id'];
-
-      if(exist_step($project_id, $step_num)){
-        $step_id = get_step_id($project_id, $step_num);
-
-        respond(get_media_token_by_step_id($step_id));
-
+          respond(R::ok());
+        } else respond(false);
       } else respond(false);
 
-  } else respond(false);
-
+    } else respond($R['wrong-token']);
+  } else respond($R['wrong-token']);
 
 ?>

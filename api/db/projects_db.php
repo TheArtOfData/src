@@ -75,6 +75,13 @@
     $db->db_query($query, "si", [$title, $project_id]);
   }
 
+  function update_visibility($project_id, $visibility){
+    $db = $GLOBALS['db'];
+
+    $query = "UPDATE projects SET published = ? WHERE project_id = ?";
+    $db->db_query($query, "ii", [$visibility, $project_id]);
+  }
+
   function update_front_image($project_id, $image_id){
     $db = $GLOBALS['db'];
 

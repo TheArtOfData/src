@@ -35,11 +35,10 @@ define('CAN_WRITE', 1);
 define('ONLY_READ', 0);
 
 class DB {
-  //to fill
-  private const SERVER_ADDR = '';
-  private const DB_USER = '';
+  private const SERVER_ADDR = 'localhost';
+  private const DB_USER = 'alloraspengo-db';
   private const DB_PSW = '';
-  private const DB_NAME = '';
+  private const DB_NAME = 'test';
 
   protected $sql;
   private $stmt;
